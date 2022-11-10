@@ -1,0 +1,113 @@
+.header-home{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.img-user{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  object-fit: cover;
+  object-position: center;
+}
+
+.titulo-user{
+  width: 100%;
+  font-size: 18px;
+  text-align: left;
+  padding: 0 0 0 10px;
+}
+
+.cta-cerrar{
+  font-size: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  outline: none;
+  border: 0;
+  color: #000;
+  background: rgba(255, 0, 0, 0.9);
+  width: 65px;
+  height: 50px;
+  object-position: center;
+}
+
+.agregar-home{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.agregar-home h2{
+  width: 100%;
+  text-align: left;
+}
+
+.form-home{
+  width: 100%;
+}
+
+.label-home{
+  display: block;
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.nota-home,
+.submit-home,
+.titulo-home{
+  width: 100%;
+}
+
+.titulo-home{
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.nota-home{
+  height: 70px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.submit-home{
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+  background: rgb(0, 153, 194);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.notificacion{
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(35, 217, 35);
+  z-index: 100;
+  background: rgb(243, 241, 241);
+  transform: scale(0);
+  transition: transform 1s ease;
+}

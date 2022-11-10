@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow: hidden;
+}
+
+.contenedor {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/img/fondo-login.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  position: fixed;
+  top: -50px;
+  right: 15px;
+  height: 30px;
+  background: rgba(255, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transform: scale(0);
+  transition: transform 1s ease;
+  z-index: 1000;
+}
+
+.icon-error {
+  padding: 0 5px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  position: absolute;
+  transition: transform 1s ease;
+}
+
+.logo {
+  padding: 20px 0;
+}
+
+.formulario {
+  width: 100%;
+}
+
+.formulario p {
+  padding: 10px;
+  display: inline;
+}
+
+.formulario button {
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  color: rgb(0, 153, 194);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.email,
+.pass {
+  display: block;
+  margin: 15px 10px;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+}
+
+::placeholder {
+  color: rgb(0, 153, 194);
+}
+
+.cta {
+  margin: 0 10px 20px 10px;
+  padding: 10px 20px;
+  outline: none;
+  border: 0;
+  color: rgb(0, 153, 194);
+  background: #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.registrarse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  position: absolute;
+  transition: transform 1s ease;
+  transform: translateX(-2000px);
+}
+
+button {
+  cursor: pointer;
+}
+
+.errorRecuperar{
+  color: rgba(255, 0, 0, 0.9);
+  padding: 0 10px;
+  letter-spacing: 2px;
+  margin: 0 0 30px 0;
+}
+
+.modal {
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  transform: translateY(-2000px);
+  transition: transform 1s ease;
+}
+
+.modal h3{
+  padding: 0 10px;
+  text-align: center;
+}
+
+.formRestaurar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 0 0 0;
+}
+
+.modalEmail {
+  border: 0;
+  outline: none;
+  width: 300px;
+  height: 30px;
+  margin: 10px 0;
+  padding: 0 5px;
+  text-align: center;
+  color: #000;
+}
+
+.enviarCorreo {
+  padding: 10px;
+  color: #fff;
+  background: rgb(0, 153, 194);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  outline: none;
+}
+
+.modalCerrar {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 0, 0, 0.9);
+  border: 0;
+  outline: none;
+  font-size: 30px;
+  background: transparent;
+}
+
+.acciones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0 0 20px 0;
+}
+
+.acciones .ctaGoogle {
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  gap: 0 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.acciones .ctaRestaurar {
+  color: rgb(0, 153, 194);
+  text-decoration: underline;
+}
+
+
+@media screen and (min-width: 900px){
+  .login,
+  .registrarse{
+    max-width: 900px;
+  }
+}
