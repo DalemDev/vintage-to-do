@@ -4,6 +4,8 @@ Esta app fue desarrollada con las siguientes tecnologías:
 * React JS
 * Firebase
 
+**Desplegada en netlify**
+
 Usa el enrutador de react (react-router-dom) para dividir las diferentes páginas en las que esta compuesta. 
 
 Usa conceptos de react como lo son:
