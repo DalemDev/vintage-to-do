@@ -26,7 +26,7 @@ function PostIt({ titulo, texto, idPostIt }) {
           <h2 className="post-titulo" id={idPostIt}>{titulo}</h2>
         </a>
         <div className="modal-postit" id={idPostIt}>
-          <button className="modalCerrar" onClick={cerrarPostIt}>
+          <button className="modal-cerrar" onClick={cerrarPostIt}>
             <AiFillCloseCircle />
           </button>
           <p className="post-texto">{texto}</p>

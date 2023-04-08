@@ -10,7 +10,7 @@ import {
   signOut,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -42,21 +42,26 @@ export function AuthProvider({ children }) {
 
   const restaurarPassword = (email) => sendPasswordResetEmail(auth, email);
 
+  const obtenerPostItFireStore = async () => {
+    const postItRef = collection(db, 'postit');
+    const q = query(postItRef, where('autor', '==', user.email)); 
+    const querySnapshot = await getDocs(q);
+    return querySnapshot;
+  }
+
   const guardarPostItFireStore = async (postit) => {
     try {
       await addDoc(collection(db, "postit"), {
         titulo: postit.titulo,
         nota: postit.nota,
+        autor: postit.autor
       });
+
       return true;
     } catch (e) {
       console.error("Error adding document: ", e);
       return false;
     }
-  };
-
-  const obtenerPostItFireStore = async () => {
-    return await getDocs(collection(db, "postit"));
   };
 
   useEffect(() => {

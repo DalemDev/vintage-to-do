@@ -127,10 +127,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  border: 1px solid #000;
   z-index: 10;
-  background: aqua;
+  background: rgb(80, 158, 158);
   text-align: center;
   transform: scale(0);
   transition: transform 1s ease;
@@ -144,7 +142,7 @@
   padding: 10px;
   justify-content: center;
   align-items: center;
-  color: rgba(255, 0, 0, 0.9);
+  color: white;
   border: 0;
   outline: none;
   font-size: 30px;
