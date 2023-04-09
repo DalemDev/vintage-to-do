@@ -56,6 +56,12 @@
   align-items: center;
   text-align: center;
 }
+
+.post-link{
+  outline: none;
+  border: 0;
+}
+
 .post-ul .post-li .post-link{
   -webkit-transform:rotate(-6deg);
   -o-transform:rotate(-6deg);
@@ -132,6 +138,10 @@
   text-align: center;
   transform: scale(0);
   transition: transform 1s ease;
+}
+
+.open{
+  transform: scale(1);
 }
 
 .modal-cerrar{
