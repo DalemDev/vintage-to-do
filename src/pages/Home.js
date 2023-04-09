@@ -5,10 +5,11 @@ import Loader from "../components/Loader";
 import { BiLogOut } from "react-icons/bi";
 import PostIt from "../components/PostIt";
 import { v4 as uuidv4 } from "uuid";
+import app from "../config/Coneccion";
+import { getAuth } from "firebase/auth";
 
 function Home() {
   const {
-    user,
     loading,
     cerrarSesion,
     guardarPostItFireStore,
@@ -16,6 +17,7 @@ function Home() {
   } = useAuth();
   const [postit, setPostIt] = useState({ titulo: "", nota: "", autor: "" });
   const [allPostIts, setAllPostIts] = useState([]);
+  const auth = getAuth(app);
 
   const allPostItsFirestore = async () => {
     const querySnapshot = await obtenerPostItFireStore();    
@@ -82,9 +84,9 @@ function Home() {
   return (
     <div className="home">
       <header className="header-home">
-        <img className="img-user" src={user.photoURL} alt="Foto" />
+        <img className="img-user" src={auth.currentUser.photoURL} alt="Foto" />
         <h1 className="titulo-user">
-          Hola {user.displayname || obtenerNombreEmail(user.email)}
+          Hola {auth.currentUser.displayName || obtenerNombreEmail(auth.currentUser.email)}
         </h1>
         <button className="cta-cerrar" onClick={handleCerrarSesion}>
           <BiLogOut />
@@ -99,7 +101,7 @@ function Home() {
             placeholder="Titulo"
             value={postit.titulo}
             onChange={({ target: { value } }) => {
-              setPostIt({ ...postit, titulo: value, autor: user.email });
+              setPostIt({ ...postit, titulo: value, autor: auth.currentUser.email });
             }}
           />
           <textarea
@@ -108,7 +110,7 @@ function Home() {
             placeholder="Ingrese aquello que no desea olvidar"
             value={postit.nota}
             onChange={({ target: { value } }) => {
-              setPostIt({ ...postit, nota: value, autor: user.email });
+              setPostIt({ ...postit, nota: value, autor: auth.currentUser.email });
             }}
           />
           <input className="submit-home" type="submit" value="Guardar" />

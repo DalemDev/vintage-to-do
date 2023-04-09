@@ -64,6 +64,7 @@ function App() {
         if (validarPassword(password)) {
           try {
             await iniciarSesion(email, password);
+            console.log('llego aqui');
             navigate("/home");
           } catch (error) {
             mostrarError(error.message);

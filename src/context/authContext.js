@@ -21,9 +21,12 @@ export const useAuth = () => {
   return context;
 };
 
-export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+export function AuthProvider({ children }) {  
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState({
+    email: "",
+    name: "",
+  });
 
   const iniciarSesion = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
@@ -44,7 +47,7 @@ export function AuthProvider({ children }) {
 
   const obtenerPostItFireStore = async () => {
     const postItRef = collection(db, 'postit');
-    const q = query(postItRef, where('autor', '==', user.email)); 
+    const q = query(postItRef, where('autor', '==', auth.currentUser.email)); 
     const querySnapshot = await getDocs(q);
     return querySnapshot;
   }
