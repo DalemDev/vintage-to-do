@@ -7,6 +7,7 @@ import PostIt from "../components/PostIt";
 import { v4 as uuidv4 } from "uuid";
 import app from "../config/Coneccion";
 import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const {
@@ -18,6 +19,7 @@ function Home() {
   const [postit, setPostIt] = useState({ titulo: "", nota: "", autor: "" });
   const [allPostIts, setAllPostIts] = useState([]);
   const auth = getAuth(app);
+  const navigate = useNavigate();
 
   const allPostItsFirestore = async () => {
     const querySnapshot = await obtenerPostItFireStore();    
@@ -39,17 +41,7 @@ function Home() {
 
   const handleCerrarSesion = async () => {
     await cerrarSesion();
-  };
-
-  
-  const obtenerNombreEmail = (email) => {
-    let nombreFinal = "";
-    email.split("").forEach((e) => {
-      if (e === "@") {
-        return nombreFinal;
-      }
-      nombreFinal += e;
-    });
+    navigate('/');
   };
 
   const mostrarNotificacion = (notificacion, color) => {
@@ -86,7 +78,7 @@ function Home() {
       <header className="header-home">
         <img className="img-user" src={auth.currentUser.photoURL} alt="Foto" />
         <h1 className="titulo-user">
-          Hola {auth.currentUser.displayName || obtenerNombreEmail(auth.currentUser.email)}
+          Hola {auth.currentUser.displayName || auth.currentUser.email.substring(0,4)  || "Bienvenido"}
         </h1>
         <button className="cta-cerrar" onClick={handleCerrarSesion}>
           <BiLogOut />

@@ -23,10 +23,7 @@ export const useAuth = () => {
 
 export function AuthProvider({ children }) {  
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({
-    email: "",
-    name: "",
-  });
+  const [user, setUser] = useState(null);
 
   const iniciarSesion = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
@@ -39,7 +36,7 @@ export function AuthProvider({ children }) {
     return signInWithPopup(auth, googleProvider);
   };
 
-  const cerrarSesion = () => {
+  const cerrarSesion = () => {        
     signOut(auth);
   };
 

@@ -63,8 +63,7 @@ function App() {
       if (validarEmail(email)) {
         if (validarPassword(password)) {
           try {
-            await iniciarSesion(email, password);
-            console.log('llego aqui');
+            await iniciarSesion(email, password);            
             navigate("/home");
           } catch (error) {
             mostrarError(error.message);
@@ -91,7 +90,7 @@ function App() {
         if (validarPassword(password)) {
           try {
             await registrarse(email, password);
-            navigate("/");
+            navigate("/home");
           } catch (error) {
             mostrarError(error.message);
           }
@@ -124,7 +123,7 @@ function App() {
   async function handleInicioSesionGoogle() {
     try {
       await iniciarSesionGoogle();
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       mostrarError(error.message);
     }
