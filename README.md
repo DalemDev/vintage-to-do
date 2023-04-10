@@ -20,4 +20,4 @@ Contiene animaciones y estilos desarrolladas con css puro.
 ![Vintage to-do](./src/assets/img/todo.PNG)
 
 
-[Demo](https://vintage-to-do.netlify.app/login)
+[Demo](https://vintage-to-do.netlify.app/)
